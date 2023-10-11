@@ -1,0 +1,27 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "host",
+      "remote"
+    ]
+  },
+  "scripts": {
+    "start": "npm run start:host & npm run start:remote",
+    "start:host": "cd ./host-app && npm start",
+    "start:remote": "cd ./remote-app && npm start",
+    "build:host": "cd ./host-app && npm run build",
+    "build:remote": "cd ./remote-app && npm run build",
+    "start:all": "yarn workspaces run start",
+    "cleanup": "yarn workspaces run cleanup",
+    "build": "npm run build:host & npm run build:remote"
+
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
